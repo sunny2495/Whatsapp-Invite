@@ -1,0 +1,148 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite alternate;
+}
+
+/* Animated Background Behind Text */
+.container {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect inside the card */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 60%);
+    animation: glowAnimation 6s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+@keyframes glowAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+h1, h2, p {
+    position: relative;
+    color: white;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Contact Icons */
+.icon {
+    display: inline-block;
+    padding: 12px;
+    margin: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Icon Colors */
+.mail { background: #d44638; }
+.call { background: #34a853; }
+.whatsapp { background: #25d366; }
+.insta { background: #bc2a8d; }
+
+/* Neon Glow Animation */
+.icon::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Different Glow Colors */
+.mail::after { box-shadow: 0 0 20px #d44638; }
+.call::after { box-shadow: 0 0 20px #34a853; }
+.whatsapp::after { box-shadow: 0 0 20px #25d366; }
+.insta::after { box-shadow: 0 0 20px #bc2a8d; }
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+.icon:hover::after {
+    opacity: 1;
+}
+
+/* Button Styling */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: linear-gradient(90deg, #ff5e62, #ff758c);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Sample Invite Link */
+.links a {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.links a:hover {
+    color: #ffdf00;
+    text-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+}
